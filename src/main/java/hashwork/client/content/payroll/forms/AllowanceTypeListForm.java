@@ -4,8 +4,10 @@ import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.data.util.BeanItem;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
 
+import hashwork.app.util.fields.ButtonsHelper;
 import hashwork.app.util.fields.UIComboBoxHelper;
 import hashwork.app.util.fields.UIComponentHelper;
 import hashwork.client.content.payroll.model.AllowanceTypeListModel;
@@ -37,5 +39,14 @@ public class AllowanceTypeListForm  extends FormLayout{
         TextField allowanceType = UIComponent.getTextField("Allowance Type :", "allowanceType", AllowanceTypeListModel.class, binder);
         TextField description = UIComponent.getTextField("Description :", "description", AllowanceTypeListModel.class, binder);
         TextField maxAmount = UIComponent.getTextField("Max Amount :", "maxAmount", AllowanceTypeListModel.class, binder);
+
+        addComponent(allowanceType);
+        addComponent(description);
+        addComponent(maxAmount);
+
+        HorizontalLayout buttons = ButtonsHelper.getButtons(save, edit, cancel, update, delete);
+        buttons.setSizeFull();
+        addComponent(buttons);
     }
+
 }

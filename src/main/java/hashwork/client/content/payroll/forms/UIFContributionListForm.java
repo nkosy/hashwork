@@ -2,18 +2,21 @@ package hashwork.client.content.payroll.forms;
 
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.data.util.BeanItem;
-import com.vaadin.ui.*;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.TextField;
+
 import hashwork.app.util.fields.ButtonsHelper;
-import hashwork.app.util.fields.UIComboBoxHelper;
 import hashwork.app.util.fields.UIComponentHelper;
-import hashwork.client.content.payroll.model.TaxCodesModel;
+import hashwork.client.content.payroll.model.UIFContributionListModel;
 
 /**
- * Created by zamzam on 2015/10/02.
+ * Created by NkosikhonaS on 10/7/2015.
  */
-public class TaxCodesForm extends FormLayout {
-    private final TaxCodesModel bean;
-    public final BeanItem<TaxCodesModel> item;
+public class UIFContributionListForm extends FormLayout {
+    private final UIFContributionListModel bean;
+    public final BeanItem<UIFContributionListModel> item;
     public final FieldGroup binder;
 
     // Define Buttons
@@ -23,23 +26,18 @@ public class TaxCodesForm extends FormLayout {
     public Button update = new Button("Update");
     public Button delete = new Button("Delete");
 
-    final UIComboBoxHelper UIComboBox = new UIComboBoxHelper();
-
-    public TaxCodesForm(){
-        bean = new TaxCodesModel();
+    public UIFContributionListForm() {
+        bean = new UIFContributionListModel();
         item = new BeanItem<>(bean);
         binder = new FieldGroup(item);
 
         final UIComponentHelper UIComponent = new UIComponentHelper();
 
-        TextField code = UIComponent.getTextField("Code :", "code", TaxCodesModel.class, binder);
-        TextField codeType = UIComponent.getTextField("Tax Code Type", "codeType", TaxCodesModel.class, binder);
-        TextArea codeDescription = UIComponent.getTextArea("Tax Code Description", "codeDescription", TaxCodesModel.class,binder,10);
+        TextField code = UIComponent.getTextField("Code :", "code", UIFContributionListModel.class, binder);
+        TextField uifPercentContribution= UIComponent.getTextField("UIF Percent Contribution :", "uifPercentContribution", UIFContributionListModel.class, binder);
 
         addComponent(code);
-        addComponent(codeType);
-        addComponent(codeDescription);
-
+        addComponent(uifPercentContribution);
 
         HorizontalLayout buttons = ButtonsHelper.getButtons(save, edit, cancel, update, delete);
         buttons.setSizeFull();
