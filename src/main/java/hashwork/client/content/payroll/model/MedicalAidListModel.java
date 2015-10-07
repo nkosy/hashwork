@@ -1,11 +1,12 @@
 package hashwork.client.content.payroll.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * Created by NkosikhonaS on 10/6/2015.
  */
-public class MedicalAidListModel {
+public class MedicalAidListModel implements Serializable {
     private String medicalAidType;
     private String description;
     private BigDecimal monthlyContribution;

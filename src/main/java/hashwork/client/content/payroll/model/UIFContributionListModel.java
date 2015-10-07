@@ -1,11 +1,12 @@
 package hashwork.client.content.payroll.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
  * Created by NkosikhonaS on 10/6/2015.
  */
-public class UIFContributionListModel {
+public class UIFContributionListModel implements Serializable {
     private String code;
     private BigDecimal uifPercentContribution;
 

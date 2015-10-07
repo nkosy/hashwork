@@ -1,9 +1,11 @@
 package hashwork.client.content.payroll.model;
 
+import java.io.Serializable;
+
 /**
  * Created by NkosikhonaS on 10/6/2015.
  */
-public class LeaveTypeListModel {
+public class LeaveTypeListModel implements Serializable {
     private String leaveType;
     private String description;
     private boolean paidLeave;

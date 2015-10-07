@@ -23,7 +23,6 @@ public class TaxCodesForm extends FormLayout {
     public Button update = new Button("Update");
     public Button delete = new Button("Delete");
 
-    final UIComboBoxHelper UIComboBox = new UIComboBoxHelper();
 
     public TaxCodesForm(){
         bean = new TaxCodesModel();

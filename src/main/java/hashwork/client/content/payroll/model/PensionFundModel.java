@@ -1,12 +1,13 @@
 package hashwork.client.content.payroll.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
  * Created by NkosikhonaS on 10/6/2015.
  */
-public class PensionFundModel {
+public class PensionFundModel implements Serializable {
     private String pensionCode;
     private String description;
     private BigDecimal percentage;
