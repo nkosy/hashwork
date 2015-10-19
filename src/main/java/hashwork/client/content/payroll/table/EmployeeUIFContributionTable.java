@@ -34,6 +34,7 @@ public class EmployeeUIFContributionTable extends Table {
                     employeeUIFContribution.getId());
         }
 
+        //Table properties
         setNullSelectionAllowed(false);
         setSelectable(true);
         setImmediate(true);
